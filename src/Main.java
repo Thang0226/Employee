@@ -53,7 +53,13 @@ public class Main {
 	}
 
 	public static void inNVFulltime(NhanVien[] list) {
-		NhanVien[] array = new NhanVien[list.length];
+		int number = 0;
+		for (NhanVien nhanVien : list) {
+			if (nhanVien instanceof NhanVienFulltime) {
+				number++;
+			}
+		}
+		NhanVien[] array = new NhanVien[number];
 		int index = 0;
 		for (NhanVien nhanVien : list) {
 			if (nhanVien instanceof NhanVienFulltime) {
@@ -61,13 +67,11 @@ public class Main {
 				index++;
 			}
 		}
-		NhanVien[] clean_array = new NhanVien[index];
-		System.arraycopy(array, 0, clean_array, 0, index);
 
-		Arrays.sort(clean_array);
+		Arrays.sort(array);
 		// In ra danh sach da sap xep
 		for (int i = 0; i < index; i++) {
-			System.out.println("\t" + clean_array[i]);
+			System.out.println("\t" + array[i]);
 		}
 	}
 
