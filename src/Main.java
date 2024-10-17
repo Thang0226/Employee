@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
 	public static void main(String[] args) {
 		NhanVien[] list = new NhanVien[5];
@@ -59,37 +61,32 @@ public class Main {
 				index++;
 			}
 		}
-		// So nhan vien fulltime
-		int n = 0;
-		for (NhanVien item : array) {
-			if (item != null) {
-				n++;
-			}
-		}
-		// Sap xep
-		sortArray(array, n);
+		NhanVien[] clean_array = new NhanVien[index];
+		System.arraycopy(array, 0, clean_array, 0, index);
+
+		Arrays.sort(clean_array);
 		// In ra danh sach da sap xep
-		for (int i = 0; i < n; i++) {
-			System.out.println("\t" + array[i]);
+		for (int i = 0; i < index; i++) {
+			System.out.println("\t" + clean_array[i]);
 		}
 	}
 
-	public static void sortArray(NhanVien[] array, int n) {
-		for (int i = 0; i < n; i++) {
-			float min = array[i].tinhLuong();
-			int ind = i;
-			for (int j = i + 1; j < n; j++) {
-				if (array[j].tinhLuong() < min) {
-					min = array[j].tinhLuong();
-					ind = j;
-				}
-			}
-			if (ind > i) {
-				NhanVien temp = array[i];
-				array[i] = array[ind];
-				array[ind] = temp;
-			}
-		}
-	}
+//	public static void sortArray(NhanVien[] array, int n) {
+//		for (int i = 0; i < n; i++) {
+//			float min = array[i].tinhLuong();
+//			int ind = i;
+//			for (int j = i + 1; j < n; j++) {
+//				if (array[j].tinhLuong() < min) {
+//					min = array[j].tinhLuong();
+//					ind = j;
+//				}
+//			}
+//			if (ind > i) {
+//				NhanVien temp = array[i];
+//				array[i] = array[ind];
+//				array[ind] = temp;
+//			}
+//		}
+//	}
 }
 

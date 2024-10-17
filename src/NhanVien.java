@@ -1,4 +1,4 @@
-public abstract class NhanVien {
+public abstract class NhanVien implements Comparable<NhanVien> {
 	private String maNV;
 	private String hoTen;
 	private int tuoi;
@@ -67,4 +67,9 @@ public abstract class NhanVien {
 	}
 
 	public abstract float tinhLuong();
+
+	@Override
+	public int compareTo(NhanVien nhanVien) {
+		return Float.compare(this.tinhLuong(), nhanVien.tinhLuong());
+	}
 }
