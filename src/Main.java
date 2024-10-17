@@ -72,7 +72,7 @@ public class Main {
 	}
 
 //	public static void sortArray(NhanVien[] array, int n) {
-//		for (int i = 0; i < n; i++) {
+//		for (int i = 0; i < n - 1; i++) {
 //			float min = array[i].tinhLuong();
 //			int ind = i;
 //			for (int j = i + 1; j < n; j++) {
